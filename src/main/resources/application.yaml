@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/url_shortcut
+    username: postgres
+    password: 132197
