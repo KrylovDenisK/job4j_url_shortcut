@@ -8,6 +8,8 @@ before_install:
   - chmod +x mvnw
   - psql -c 'create database urlshortcut;' -U postgres
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 sudo: false
 
 notifications:
