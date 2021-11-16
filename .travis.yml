@@ -5,6 +5,7 @@ services:
   - postgresql
 
 before_install:
+  - chmod +x mvnw
   - psql -c 'create database urlshortcut;' -U postgres
 
 sudo: false
