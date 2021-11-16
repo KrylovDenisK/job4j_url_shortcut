@@ -10,3 +10,16 @@ before_install:
 
 sudo: false
 
+notifications:
+  email:
+    recipients:
+      -d.krylovk@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
+
+    env:
+      global:
+        - CODECOV_TOKEN='c84d44d7-d27b-4c9a-a8e6-9e171b0b3efd'
+
+
+
