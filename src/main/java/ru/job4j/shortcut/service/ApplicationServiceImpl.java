@@ -38,6 +38,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     public Url urlRegistration(Url url, String login) {
         url.setCode(stringGenerator.generate(6));
         url.setSite(siteRepository.findByLogin(login));
+        url.setTotal(0);
         return urlRepository.save(url);
     }
 

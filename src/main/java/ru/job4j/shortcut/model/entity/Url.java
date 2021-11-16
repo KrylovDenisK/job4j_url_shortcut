@@ -1,6 +1,5 @@
 package ru.job4j.shortcut.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonView;
 import ru.job4j.shortcut.model.views.ViewUrl;
@@ -15,21 +14,23 @@ public class Url {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name")
-    @JsonView({ViewUrl.Statistic.class, ViewUrl.Statistic.class})
+    @JsonView({ViewUrl.Statistic.class})
     private String name;
     @Column(name = "code")
+    @JsonView({ViewUrl.Convert.class})
     private String code;
     @ManyToOne
     @JoinColumn(name = "site_id")
     private Site site;
     @Column(name = "total")
-    @JsonView({ViewUrl.Statistic.class, ViewUrl.Statistic.class})
+    @JsonView({ViewUrl.Statistic.class})
     private Integer total;
 
-    @JsonCreator
+
     public static Url of(@JsonProperty("url") String name) {
         Url url = new Url();
         url.name = name;
+        //url.total = 0;
         return url;
     }
 
