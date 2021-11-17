@@ -34,3 +34,4 @@ $ curl -X GET -H "Authorization:Bearer your_token" http://localhost:8080/statist
 - Spring, Spring BOOT
 - Spring DATA JPA, PostgreSQL, Liquibase
 - Spring Security, JWT
+- Mockito, Junit4
